@@ -48,10 +48,3 @@ Thumbs.db
 *.tmp
 *.bak
 
-# Keep essential frontend files
-!public/
-!src/
-!index.html
-!package.json
-!package-lock.json
-!vite.config.js
