@@ -65,12 +65,13 @@ async def predict(
     # Scale features
     try:
         features_scaled = scaler.transform(features)
+        scaled_df = pd.DataFrame(features_scaled, columns=features.columns)
     except Exception as e:
         raise HTTPException(status_code=500, detail="Error scaling input features.")
 
     # Predict using the model
     try:
-        prediction = model.predict(features_scaled)
+        prediction = model.predict(scaled_df)
         prediction = int(prediction[0])
     except Exception as e:
         raise HTTPException(status_code=500, detail="Error generating prediction.")
@@ -88,5 +89,5 @@ async def predict(
 # Run the FastAPI app
 if __name__ == "__main__":
     import uvicorn
-
+    print("Backend is running")
     uvicorn.run("fast:app", host="127.0.0.1", port=8000, reload=True)
