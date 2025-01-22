@@ -36,7 +36,7 @@ const FormPage = () => {
 
     try {
       const formData = new URLSearchParams(inputData);
-      const response = await axios.post('http://127.0.0.1:8000/predict', formData, {
+      const response = await axios.post('https://reactnew-frontend.onrender.com/predict', formData, {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       });
       const prediction = response.data.Prediction;

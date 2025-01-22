@@ -90,4 +90,5 @@ async def predict(
 #if __name__ == "__main__":
  #   import uvicorn
  #   print("Backend is running")
- #   uvicorn.run("fast:app", host="127.0.0.1", port=8000, reload=True)
+ #
+ #    uvicorn.run("fast:app", host="127.0.0.1", port=8000, reload=True)
