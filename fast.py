@@ -87,7 +87,7 @@ async def predict(
     return {"Prediction": result_message}
 
 # Run the FastAPI app
-if __name__ == "__main__":
-    import uvicorn
-    print("Backend is running")
-    uvicorn.run("fast:app", host="127.0.0.1", port=8000, reload=True)
+#if __name__ == "__main__":
+ #   import uvicorn
+ #   print("Backend is running")
+ #   uvicorn.run("fast:app", host="127.0.0.1", port=8000, reload=True)
