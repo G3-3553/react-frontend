@@ -1,5 +1,6 @@
 // App.jsx
-import React from 'react';
+
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import IntroPage from './pages/IntroPage';
 import FormPage from './pages/FormPage';
@@ -15,6 +16,24 @@ function AppContent() {
   };}
 
 function App() {
+  useEffect(() => {
+    // Test backend connectivity
+    const checkBackend = async () => {
+      try {
+        const response = await fetch('https://reactnew-frontend.onrender.com/');
+        if (response.ok) {
+          const data = await response.json();
+          console.log('Backend response:', data);
+        } else {
+          console.error('Backend responded with an error:', response.status);
+        }
+      } catch (error) {
+        console.error('Error connecting to backend:', error);
+      }
+    };
+
+    checkBackend();
+  }, []);
   
   return (
     <Router>

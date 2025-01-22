@@ -11,7 +11,7 @@ app = FastAPI()
 # Enable Cross-Origin Resource Sharing (CORS)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # Replace with production URL if applicable
+    allow_origins=["http://localhost:5173", "https://react-frontend-6bos.onrender.com"],  # Replace with production URL if applicable
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -23,6 +23,10 @@ try:
     scaler = pickle.load(open('scaler.pkl', 'rb'))
 except FileNotFoundError as e:
     raise Exception("Model or Scaler file not found. Ensure 'air_quality.pkl' and 'scaler.pkl' are in the working directory.")
+
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the Air Quality Prediction API!"}
 
 # Route to handle predictions
 @app.post("/predict", response_class=JSONResponse)
