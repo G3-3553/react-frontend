@@ -1,0 +1,100 @@
+.form-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f3e7e7; /* Light background color for the form page */
+  min-height: 100vh; /* Ensure the form page takes the full viewport height */
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.form-page h1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #333333; /* Dark text color for headings */
+  padding: 35px;
+}
+
+form {
+  width: 100%;
+  max-width: 90%;
+  background-color: #ffffff; /* White background for the form */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the form */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2rem;
+  height: 80%;
+
+}
+
+
+.input-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.input-field label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333333; /* Dark text color for labels */
+  font-size: x-large;
+
+}
+
+.input-field input {
+  padding: 10px 10px 10px 30px; /* Add padding for the icon */
+  font-size: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9; /* Light background color for input fields */
+  color: #333333; /* Dark text color for input fields */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for border color and box-shadow */
+  height: 40px;
+  width: 80%;
+}
+
+.input-field input:hover {
+  border-color: #007bff; /* Change border color on hover */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle shadow on hover */
+}
+
+.input-field .icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #007bff;
+}
+
+.submit-button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for background color and transform */
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}

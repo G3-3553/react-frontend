@@ -1,0 +1,74 @@
+/* Fullscreen container with black background */
+.intro-page {
+    display: flex; /* Use Flexbox for centering */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    background: linear-gradient(135deg, #000000, #1a1a1a, #2e2e2e);
+    font-family: "Arial", sans-serif;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden; /* Prevent scrolling */
+  }
+  
+  /* Styles for the main title (Breathe Better) */
+  .intro-text h1 {
+    font-size: 6rem; /* Large title size */
+    color: #fff; /* White color for title */
+    margin-bottom: 1.5rem;
+    animation: fadeIn 2s ease-in-out, pulse 2s infinite; /* Fade-in and glowing animation */
+  }
+  
+  /* Styles for the subtitle text (caption) */
+  .intro-text p {
+    font-size: 1.5rem; /* Subtitle size */
+    color: #ffa500; /* Orange color */
+    margin-bottom: 3rem; /* Add space between subtitle and "Click to Continue" */
+    animation: fadeIn 2.5s ease-in-out;
+  }
+  
+  /* Styles for the "Click Anywhere to Continue" message */
+  .click-to-continue {
+    font-size: 1.25rem; /* Slightly smaller font size */
+    color: #ffa500; /* Orange color */
+    margin-top: 2rem; /* Space above the line */
+    animation: blink 1.5s infinite; /* Blinking animation */
+  }
+  
+  /* Add two-line break between "Click Anywhere" and subtitle */
+  .click-to-continue::after {
+    content: "\A"; /* Adds two line breaks */
+    white-space: pre-wrap;
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px); /* Start slightly above */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* Move to original position */
+    }
+  }
+  
+/* Glowing text animation (reduced shadow intensity) */
+@keyframes pulse {
+    0%, 100% {
+      text-shadow: 0 0 10px #fff, 0 0 0px #fff; /* Subtle glow */
+    }
+    50% {
+      text-shadow: 0 0 5px #fff, 0 0 0px #fff; /* Slightly brighter glow */
+    }
+  }
+  
+  
+  /* Blinking animation for "Click Anywhere to Continue" */
+  @keyframes blink {
+    50% {
+      opacity: 0.2; /* Text dims slightly */
+    }
+  }
